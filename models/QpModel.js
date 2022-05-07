@@ -15,7 +15,7 @@ const DropAll=async()=>{
 
 const AddQuestion=async(data)=>{
     pg_client = init_db.init_db();
-    let raw = "INSERT INTO q_paper(srl,marks,des) VALUES ("+"'"+data.srl+"'"+','+"'"+data.marks+"'"+','+"'"+data.des+"'"+")";
+    let raw = "INSERT INTO q_paper(marks,des) VALUES ("+"'"+data.marks+"'"+','+"'"+data.des+"'"+")";
     // console.log(raw)
     // process.exit()
     return await pg_client.query(raw);
