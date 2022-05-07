@@ -19,7 +19,11 @@ const client = new Client({
 
 client.connect();
 
-client.query("CREATE TABLE IF NOT EXISTS public.q_paper(srl INTEGER,marks INTEGER, des TEXT,marks_got INTEGER)");
+client.query("CREATE TABLE IF NOT EXISTS public.q_paper("+
+"PRIMARY KEY(srl),"+
+"marks INTEGER,"+
+"description TEXT,"+
+"marks_got INTEGER)");
 
 return client;
 }
