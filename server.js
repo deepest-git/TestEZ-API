@@ -4,6 +4,7 @@ const app = express();
 const server = http.createServer(app);
 const routeQP = require('./routes/Qpaper');
 const init = require('./init');
+const process = require('process');
 
 try{
 init.init_db();
@@ -15,5 +16,5 @@ app.get('/', (req, res) => res.sendFile('/home/deepak/Desktop/TestEZ/api/test.ht
 app.use(express.json());
 app.use('/q_papers',routeQP);
 
-const port = 8088;
+const port = process.env.PORT||3000;
 server.listen(port, () => console.log(`Server running on port ${port}`));
