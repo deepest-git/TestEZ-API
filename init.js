@@ -20,8 +20,7 @@ const client = new Client({
 client.connect();
 
 client.query("CREATE TABLE IF NOT EXISTS public.q_paper("+
-"srl INTEGER NOT NULL AUTO_INCREMENT,"+
-"PRIMARY KEY(srl),"+
+"srl SERIAL PRIMARY KEY,"+
 "marks INTEGER,"+
 "description TEXT,"+
 "marks_got INTEGER)");
