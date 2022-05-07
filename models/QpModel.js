@@ -1,3 +1,5 @@
+const { raw } = require("express");
+
 init_db = require("../init");
 
 
@@ -11,4 +13,12 @@ const DropAll=async()=>{
     return await pg_client.query('DROP DATABASE IF EXISTS q_paper')
 }
 
-module.exports = {GetAllQpapers,DropAll};
+const AddQuestion=async(data)=>{
+    pg_client = init_db.init_db();
+    let raw = "INSERT INTO q_paper(srl,marks,des) VALUES ("+"'"+data.srl+"'"+','+"'"+data.marks+"'"+','+"'"+data.des+"'"+")";
+    // console.log(raw)
+    // process.exit()
+    return await pg_client.query(raw);
+}
+
+module.exports = {GetAllQpapers,DropAll,AddQuestion};

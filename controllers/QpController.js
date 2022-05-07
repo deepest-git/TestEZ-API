@@ -10,4 +10,9 @@ const dropAll = (callback) =>{
    .then(res => {callback(res)})
 }
 
-module.exports = {getAll,dropAll};
+const addQuestion = (data,cb) =>{
+   QpModel.AddQuestion(data)
+   .then(res => cb(res))
+}
+
+module.exports = {getAll,dropAll,addQuestion};

@@ -12,6 +12,7 @@ init.init_db();
 };
 
 app.get('/', (req, res) => res.sendFile('/home/deepak/Desktop/TestEZ/api/test.html'));
+app.use(express.json());
 app.use('/q_papers',routeQP);
 
 const port = 8088;
