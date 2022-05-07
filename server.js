@@ -12,7 +12,7 @@ init.init_db();
     console.log(err.message)
 };
 
-app.get('/', (req, res) => res.sendFile('/home/deepak/Desktop/TestEZ/api/test.html'));
+app.get('/', (req, res) => res.sendFile('test.html',{root:'./'}));
 app.use(express.json());
 app.use('/q_papers',routeQP);
 
