@@ -10,12 +10,12 @@ const GetAllQpapers=async()=>{
 
 const DropAll=async()=>{
     pg_client = init_db.init_db();
-    return await pg_client.query('DROP DATABASE IF EXISTS q_paper')
+    return await pg_client.query('DROP TABLE IF EXISTS q_paper')
 }
 
 const AddQuestion=async(data)=>{
     pg_client = init_db.init_db();
-    let raw = "INSERT INTO q_paper(marks,des) VALUES ("+"'"+data.marks+"'"+','+"'"+data.des+"'"+")";
+    let raw = "INSERT INTO q_paper(marks,description) VALUES ("+"'"+data.marks+"'"+','+"'"+data.des+"'"+")";
     // console.log(raw)
     // process.exit()
     return await pg_client.query(raw);
