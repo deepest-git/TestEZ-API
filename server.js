@@ -1,5 +1,6 @@
 const express = require('express');
 const http = require('http');
+var cors = require('cors');
 const app = express(); 
 const server = http.createServer(app);
 const routeQP = require('./routes/Qpaper');
@@ -12,6 +13,7 @@ init.init_db();
     console.log(err.message)
 };
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static('./'));
 app.get('/', (req, res) => res.sendFile('test.html',{root:'./'}));
