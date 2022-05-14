@@ -12,8 +12,9 @@ init.init_db();
     console.log(err.message)
 };
 
-app.get('/', (req, res) => res.sendFile('test.html',{root:'./'}));
 app.use(express.json());
+app.use(express.static('./'));
+app.get('/', (req, res) => res.sendFile('test.html',{root:'./'}));
 app.use('/q_papers',routeQP);
 
 const port = process.env.PORT||3000;
