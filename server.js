@@ -13,7 +13,9 @@ init.init_db();
     console.log(err.message)
 };
 
-app.use(cors());
+app.use(cors({
+    origin:'*'
+}));
 app.use(express.json());
 app.use(express.static('./'));
 app.get('/', (req, res) => res.sendFile('test.html',{root:'./'}));

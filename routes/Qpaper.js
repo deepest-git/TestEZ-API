@@ -13,7 +13,8 @@ router.get('/drop_all',(req,res)=>{
 router.post('/add_q',(req,res)=>{
     // console.log(req.body);
     // process.exit()
-    contoller.addQuestion(req.body,data=>res.send(data));
+    res.send(req.body);
+    // contoller.addQuestion(req.body,data=>res.send(data));
 });
 
 module.exports = router;

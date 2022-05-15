@@ -1,5 +1,6 @@
-fetch('q_papers/add_q',{
+fetch('/q_papers/add_q',{
     method:'POST',
+    mode:'cors',
     headers: {
         'Content-Type': 'application/json'
         // 'Content-Type': 'application/x-www-form-urlencoded',
