@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/all',(req,res)=>{
-    contoller.getAll(data=>res.send(data));
+    contoller.getAll(data=>res.json(data));
 });
 
 router.get('/drop_all',(req,res)=>{
