@@ -1,4 +1,4 @@
-fetch('/q_papers/add_q',{
+fetch('https://testez-pg.herokuapp.com/q_papers/add_q',{
     method:'POST',
     mode:'cors',
     headers: {
