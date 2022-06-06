@@ -17,4 +17,12 @@ router.post('/add_q',(req,res)=>{
     contoller.addQuestion(req.body,data=>res.send(data));
 });
 
+router.get('/search',(req,res)=>{
+    contoller.searchQ(req.query,data=>res.send(data))
+});
+
+router.get('/reinitDB',(req,res)=>{
+    contoller.reinitDB(data=>res.send(data))
+});
+
 module.exports = router;

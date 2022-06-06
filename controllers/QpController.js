@@ -15,4 +15,14 @@ const addQuestion = (data,cb) =>{
    .then(res => cb(res))
 }
 
-module.exports = {getAll,dropAll,addQuestion};
+const searchQ = (data,cb) =>{
+   QpModel.searchQ(data)
+   .then(res => cb(res.rows))
+}
+
+const reinitDB = (cb) =>{
+   QpModel.reinitDB()
+   .then(res => cb(res))
+}
+
+module.exports = {getAll,dropAll,addQuestion,searchQ,reinitDB};

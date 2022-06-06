@@ -7,3 +7,7 @@
 //       },
 //     body:JSON.stringify({marks:'1',des:'human?'})
 // })
+
+fetch('/q_papers/all')
+.then(res=>res.json())
+.then(data=>console.log(data))
