@@ -54,6 +54,22 @@ const init_db=(re_init)=>{
     "name VARCHAR,"+
     "sem integer,"+
     "course VARCHAR);");
+
+    client.query("CREATE TABLE IF NOT EXISTS public.answer("+
+    "id SERIAL PRIMARY KEY,"+
+    "student_id INTEGER,"+
+    "QP_id INTEGER,"+
+    "ans JSON,"+
+    "CONSTRAINT fk_student FOREIGN KEY(student_id) REFERENCES student(id),"+
+    "CONSTRAINT fk_q_paper FOREIGN KEY(QP_id) REFERENCES q_paper(id));");
+
+    client.query("CREATE TABLE IF NOT EXISTS public.result("+
+    "id SERIAL PRIMARY KEY,"+
+    "student_id INTEGER,"+
+    "QP_id INTEGER,"+
+    "score INTEGER,"+
+    "CONSTRAINT fk_student FOREIGN KEY(student_id) REFERENCES student(id),"+
+    "CONSTRAINT fk_q_paper_id FOREIGN KEY(QP_id) REFERENCES q_paper(id));");
     
     db_ins = client;
   }

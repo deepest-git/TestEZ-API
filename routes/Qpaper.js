@@ -25,4 +25,8 @@ router.get('/reinitDB',(req,res)=>{
     contoller.reinitDB(data=>res.send(data))
 });
 
+router.post('/submitQp',(req,res)=>{
+    contoller.submitQp(data=>res.send(data))
+});
+
 module.exports = router;

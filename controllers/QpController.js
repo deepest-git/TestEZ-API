@@ -25,4 +25,9 @@ const reinitDB = (cb) =>{
    .then(res => cb(res))
 }
 
-module.exports = {getAll,dropAll,addQuestion,searchQ,reinitDB};
+const submitQp = (data,cb) =>{
+   QpModel.submitQp(data);
+   cb({'success':true})
+}
+
+module.exports = {getAll,dropAll,addQuestion,searchQ,reinitDB,submitQp};
