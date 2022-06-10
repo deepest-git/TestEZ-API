@@ -61,7 +61,7 @@ const init_db=(re_init)=>{
     "QP_id INTEGER,"+
     "ans JSON,"+
     "CONSTRAINT fk_student FOREIGN KEY(student_id) REFERENCES student(id),"+
-    "CONSTRAINT fk_q_paper FOREIGN KEY(QP_id) REFERENCES q_paper(id));");
+    "CONSTRAINT fk_q_paper FOREIGN KEY(QP_id) REFERENCES q_paper(srl));");
 
     client.query("CREATE TABLE IF NOT EXISTS public.result("+
     "id SERIAL PRIMARY KEY,"+
@@ -69,7 +69,7 @@ const init_db=(re_init)=>{
     "QP_id INTEGER,"+
     "score INTEGER,"+
     "CONSTRAINT fk_student FOREIGN KEY(student_id) REFERENCES student(id),"+
-    "CONSTRAINT fk_q_paper_id FOREIGN KEY(QP_id) REFERENCES q_paper(id));");
+    "CONSTRAINT fk_q_paper_id FOREIGN KEY(QP_id) REFERENCES q_paper(srl));");
     
     db_ins = client;
   }
